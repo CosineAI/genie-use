@@ -1,9 +1,9 @@
 /**
  * Returns a Hello World message.
  */
-function helloWorld() {
+function run() {
     return "Hello, World!";
 }
 
 // Example usage:
-console.log(helloWorld());
+console.log(run());
