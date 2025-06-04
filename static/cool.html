@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Do Something Cool!</title>
+    <style>
+        body {
+            background: #232946;
+            color: #fff;
+            font-family: 'Segoe UI', sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            transition: color 0.3s;
+        }
+        #fact {
+            margin-top: 2rem;
+            font-size: 1.3rem;
+            background: #121629;
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            min-height: 2em;
+            box-shadow: 0 2px 8px #0002;
+        }
+        button {
+            margin-top: 2rem;
+            font-size: 1.1rem;
+            padding: 0.6rem 1.8rem;
+            border: none;
+            border-radius: 6px;
+            background: #eebbc3;
+            color: #232946;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.2s, color 0.2s;
+        }
+        button:hover {
+            background: #f6c8d3;
+            color: #1a1a2e;
+        }
+        .sparkle {
+            animation: sparkle 1.2s infinite alternate;
+        }
+        @keyframes sparkle {
+            0% { text-shadow: 0 0 6px #eebbc3, 0 0 14px #b8c1ec; }
+            100% { text-shadow: 0 0 16px #eebbc3, 0 0 24px #b8c1ec; }
+        }
+    </style>
+</head>
+<body>
+    <h1 id="greeting" class="sparkle">👋 Hello, Explorer!</h1>
+    <button id="factBtn">Show me something cool</button>
+    <div id="fact"></div>
+    <script>
+        // Animate greeting color
+        let hue = 0;
+        setInterval(() => {
+            document.getElementById('greeting').style.color = `hsl(${hue}, 80%, 70%)`;
+            hue = (hue + 2) % 360;
+        }, 30);
+
+        // Fun facts array
+        const facts = [
+            "Did you know? Honey never spoils. Archaeologists have tasted 3000-year-old honey!",
+            "Bananas are berries, but strawberries aren't.",
+            "There are more stars in the universe than grains of sand on all the world's beaches.",
+            "Octopuses have three hearts and blue blood.",
+            "The Eiffel Tower can be 15 cm taller during the summer.",
+            "You can hear a blue whale's heartbeat from more than 2 miles away.",
+            "A group of flamingos is called a 'flamboyance'.",
+            "Some turtles can breathe through their butts.",
+            "The unicorn is the national animal of Scotland.",
+            "Wombat poop is cube-shaped!"
+        ];
+
+        // Button event to show a random fact
+        document.getElementById('factBtn').onclick = function() {
+            const idx = Math.floor(Math.random() * facts.length);
+            document.getElementById('fact').textContent = facts[idx];
+        };
+    </script>
+</body>
+</html>
