@@ -1,5 +1,6 @@
-function sayHello() {
-    console.log("hello world!");
+function helloWorld() {
+    console.log("Hello, World!");
 }
 
-sayHello();
+// Example invocation
+helloWorld();
